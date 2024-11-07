@@ -66,10 +66,10 @@ def get_num_employees_by_country(employee_salary_df: pd.DataFrame, selected_coun
 
 #TODO: MAKE THIS USING THE MODEL FUNCTION ABOVE (Copy pasting is your friend here)
 def get_num_employees_by_job_title(employee_salary_df: pd.DataFrame, selected_titles: list):
-    # Filter the dataframe based on selected countries
+    # Filter the dataframe based on selected titles
     filtered_df = employee_salary_df[employee_salary_df['JobTitle'].isin(selected_titles)]
 
-    # Group by Country and count the number of employees
+    # Group by JobTitle and count the number of employees
     num_employees_by_job_title = filtered_df.groupby('JobTitle')['EmployeeId'].nunique().reset_index()
     
     # Plot the graph
